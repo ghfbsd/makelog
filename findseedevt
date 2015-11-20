@@ -1,0 +1,15 @@
+# Shell script to find names of SEED event files and sort them into
+# chronological order.
+#
+# First parameter is seed event-oriented volume name.
+sfx='*sed'
+sfx='*sd'
+
+find $1 -L \( \
+   -name '*[Ss][Dd]' -o -name '*O[Ss][Dd]' -o -name '*[Ss][Ee][Dd]' \
+\) -print |
+while read file ; do
+   name=`expr $file : ${1}/'\(.*\)'`
+   echo $name
+done |
+sort -t/ +2

@@ -1,0 +1,37 @@
+These programs were developed to use CDSEIS with arbitrary SEED volumes.
+   George Helffrich U. Bristol 1992-2007.
+   Last updated:  Dec. 24, 2009
+
+The key program is makelog, which takes a SEED volume and a catalog and
+associates the time windows in the SEED volume with a catalog and produces
+a log file of event information and stations recording the event, and the
+duration of the time window for each station.
+
+makelog usage:
+
+makelog [-s][-d][-cat {std | cmt}] <directory> [<catalog>]
+
+where:
+   -cat std - format of the catalog is free-format lines
+   -cat cmt - format of the catalog is CMT .dek/.ndk format
+   -s - dump station info only, no log file
+   -d - debug (repeat for more information)
+
+   If the SEED volume is event oriented (contains event information), then
+   this parameter is not required. 
+
+   <directory> - the name of the directory where the SEED volume is located.
+
+   This keeps names short in log files.  If your SEED volume is located in
+   /Users/doofus/event/data/20020103.seed, then this parameter should be
+   /Users/doofus/event/data (and the standard input should be 20020103.seed).
+
+   <catalog> - the full path name of the catalog, if required.
+
+   Catalog is either in the CMT .dek/.ndk format, or in a series of
+   ascending order free-format lines:
+      yyyy mo dy hh mm ss lat lon depth maga magb
+
+There is a man-style page for more detailed information.  Read via:
+
+nroff -man makelog.1

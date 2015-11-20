@@ -1,0 +1,7 @@
+.sachist
+.gdb_history
+cdscan
+makelog
+mssplit
+reformat
+*.o
