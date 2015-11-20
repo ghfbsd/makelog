@@ -4,4 +4,5 @@ cdscan
 makelog
 mssplit
 reformat
+makelog.log
 *.o
