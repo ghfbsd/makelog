@@ -13,6 +13,9 @@ makelog: makelog.o datspan.o ${OBJS}
 cdscan: cdscan.o iosubs.o possubs.o
 	$(FC) -o cdscan cdscan.o iosubs.o possubs.o
 
+seedscan: seedscan.o iosubs.o possubs.o
+	$(FC) -o seedscan seedscan.o iosubs.o possubs.o
+
 mssplit: mssplit.o
 	$(CC) ${FFLAGS} -o mssplit mssplit.o
 

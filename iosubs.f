@@ -105,7 +105,7 @@ C           Physical record isn't in buffer, get it.
 C        Find logical record in physical record.  Read record number, type,
 C           and continuation indicator.
 	 noffs = mod(pos(1)-1,lbfac)*lrecl
-	 read(inbuf(1+noffs:),'(i6,2a1)',end=98,err=98)
+	 read(inbuf(1+noffs:),'(i6,2a1)',end=99,err=98)
      &      lrec, lrtype, lrcc
 	 if (lrec .ne. pos(1)) then
 	    pause '**GETBKT:  Didn''t read the right log. record!'

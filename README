@@ -5,7 +5,10 @@ These programs were developed to use CDSEIS with arbitrary SEED volumes.
 The key program is makelog, which takes a SEED volume and a catalog and
 associates the time windows in the SEED volume with a catalog and produces
 a log file of event information and stations recording the event, and the
-duration of the time window for each station.
+duration of the time window for each station.  It is now distributed along
+with CDSEIS: see 
+
+   https://github.com/ghfbsd/cdseis
 
 makelog usage:
 
@@ -14,11 +17,12 @@ makelog [-s][-d][-cat {std | cmt}] <directory> [<catalog>]
 where:
    -cat std - format of the catalog is free-format lines
    -cat cmt - format of the catalog is CMT .dek/.ndk format
-   -s - dump station info only, no log file
-   -d - debug (repeat for more information)
 
    If the SEED volume is event oriented (contains event information), then
    this parameter is not required. 
+
+   -s - dump station info only, no log file
+   -d - debug (repeat for more information)
 
    <directory> - the name of the directory where the SEED volume is located.
 
